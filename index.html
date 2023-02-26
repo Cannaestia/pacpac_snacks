@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <style type="text/css">
+    
+    header {
+      background-color: #b4d5a2;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      
+    }
+
+    .header-image{
+      padding-left: 30px;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: auto;
+      
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin-left: auto;
+      padding-right: 30px;
+      
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 17px;
+      letter-spacing: 1px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #D4EcEc;
+      color: #333;
+    }
+    
+    body {
+      background-color: #D4EcEc;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+
+    }
+
+    .slider {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+
+    .slider img {
+      position: absolute;
+      top: 0;
+      width: 30%;
+      height: auto;
+      margin: 0 10px;
+      opacity: 0;
+      transition: opacity 1s ease, transform 0.8s ease;
+      transform: translateX(-50%);
+    }
+
+    .slider img.current {
+      opacity: 1;
+      z-index: 2;
+      transform: translateX(0) scale(2.5);
+    }
+
+    .slider img.previous,
+    .slider img.next {
+      opacity: 0.2;
+      z-index: 1;
+      margin-top: 40px;
+
+    }
+
+    .slider img.previous {
+      transform: translateX(-100%) scale(1);
+      
+    }
+
+    .slider img.next {
+      transform: translateX(100%) scale(1);
+    }
+
+    .slider img:last-child {
+      margin-right: 0;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+
+    .column {
+      display: flex;
+      align-items: flex-start;
+      /* align items to the top */
+    }
+
+    .circle {
+      position: relative;
+      /* set the position to relative */
+      top: 0;
+      /* align to the top of the container */
+      left: 0;
+      /* align to the left of the container */
+      margin-right: 20px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      width: 115px;
+      height: 115px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .circle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .columns  {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+
+    .columns2  {
+    display: flex;
+  align-items: center;
+  padding: 20px 50px 20px 50px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+  background-color: #b4d5a2;
+     
+    }
+
+    .column {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #5BA6A4;
+}
+
+.column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.column .circle {
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+/* .column:hover .circle {
+  transform: rotate(360deg);
+} */
+
+.p-column {
+  text-align: left;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+    .founders {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    footer {
+  bottom: 0;
+  width: auto;
+  background-color: #b4d5a2;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <img class="header-image" src="/assets/images/Pac_Pac_Snacks.png" alt="Header Image">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Our Story</h1>
+    <div class="slider">
+      <img src="/assets/images/beach_coast_holiday_island_landscape_nature_nobody_600768.jpg" alt="placeholder image"
+        class="current" />
+      <img src="/assets/images/istockphoto-1263997413-170667a.jpg" alt="placeholder image" class="next" />
+      <img src="/assets/images/istockphoto-1387095426-170667a.jpg" alt="placeholder image" />
+      <img src="/assets/images/istockphoto-147257334-170667a.jpg" alt="placeholder image" />
+      <img src="/assets/images/istockphoto-93172659-170667a.jpg" alt="placeholder image" />
+      <img src="/assets/images/seascape-4844697__480.jpg" alt="placeholder image" class="previous" />
+    </div>
+    <div class="columns2">
+      <div class="p-column">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, minima adipisci odio incidunt ullam maxime velit
+      libero minus consequuntur porro est, commodi omnis cumque beatae nemo deserunt dolores nobis delectus?Lorem ipsum
+      dolor sit amet consectetur, adipisicing elit. Dicta, necessitatibus provident. A accusamus ducimus quaerat error
+      corporis impedit aperiam, dolorum recusandae tempore, ut voluptatibus aspernatur vel consequatur porro,
+      perferendis voluptas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, officia, temporibus eum
+      saepe recusandae necessitatibus perferendis quisquam numquam rem qui alias maxime inventore neque id est tenetur,
+      maiores esse doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum sit nulla corporis
+      dolores, laborum soluta neque sed animi unde quia nobis pariatur totam. Quod iste, quas consequatur ea rerum
+      officiis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis doloribus quasi voluptatibus quod non
+      sequi quaerat nobis earum possimus maxime? Consequuntur minus, facilis nesciunt odit animi quod in ipsa vel? Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut dolores aspernatur delectus explicabo tenetur iste
+      tempora velit, odio excepturi, quasi perspiciatis voluptate consequatur itaque fugit illo! Facilis, neque aliquid.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, minima adipisci odio incidunt ullam maxime velit
+      libero minus consequuntur porro est, commodi omnis cumque beatae nemo deserunt dolores nobis delectus?Lorem ipsum
+      dolor sit amet consectetur, adipisicing elit. Dicta, necessitatibus provident. A accusamus ducimus quaerat error
+      corporis impedit aperiam, dolorum recusandae tempore, ut voluptatibus aspernatur vel consequatur porro,
+      perferendis voluptas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, officia, temporibus eum
+      saepe recusandae necessitatibus perferendis quisquam numquam rem qui alias maxime inventore neque id est tenetur,
+      maiores esse doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    </p>
+      </div>
+      <div class="p-column">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, minima adipisci odio incidunt ullam maxime velit
+          libero minus consequuntur porro est, commodi omnis cumque beatae nemo deserunt dolores nobis delectus?Lorem ipsum
+          dolor sit amet consectetur, adipisicing elit. Dicta, necessitatibus provident. A accusamus ducimus quaerat error
+          corporis impedit aperiam, dolorum recusandae tempore, ut voluptatibus aspernatur vel consequatur porro,
+          perferendis voluptas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, officia, temporibus eum
+          saepe recusandae necessitatibus perferendis quisquam numquam rem qui alias maxime inventore neque id est tenetur,
+          maiores esse doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum sit nulla corporis
+          dolores, laborum soluta neque sed animi unde quia nobis pariatur totam. Quod iste, quas consequatur ea rerum
+          officiis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis doloribus quasi voluptatibus quod non
+          sequi quaerat nobis earum possimus maxime? Consequuntur minus, facilis nesciunt odit animi quod in ipsa vel? Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Mollitia ut dolores aspernatur delectus explicabo tenetur iste
+          tempora velit, odio excepturi, quasi perspiciatis voluptate consequatur itaque fugit illo! Facilis, neque aliquid.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, minima adipisci odio incidunt ullam maxime velit
+          libero minus consequuntur porro est, commodi omnis cumque beatae nemo deserunt dolores nobis delectus?Lorem ipsum
+          dolor sit amet consectetur, adipisicing elit. Dicta, necessitatibus provident. A accusamus ducimus quaerat error
+          corporis impedit aperiam, dolorum recusandae tempore, ut voluptatibus aspernatur vel consequatur porro,
+          perferendis voluptas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, officia, temporibus eum
+          saepe recusandae necessitatibus perferendis quisquam numquam rem qui alias maxime inventore neque id est tenetur,
+          maiores esse doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        </p>
+          </div>
+    </div>
+  </div>
+
+  <div class="founders">
+    <h1>The Founders</h1>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <img src="/assets/images/kurt-cobain-10-b0379fed591c4be98a11e38e3681d53b.jpg" alt="placeholder image"
+        class="circle" />
+      <div class="column-text">
+        <h2>Kurt Cobain</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, id eos voluptates consectetur commodi
+          adipisci natus eligendi cum tempore animi facere, magnam, officiis fugiat fugit molestiae dignissimos dolor
+          veniam deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae commodi id repudiandae nihil
+          alias aperiam ducimus veritatis. Obcaecati impedit dignissimos dolor maiores velit quia molestiae id cumque?
+          Possimus, voluptatibus ex? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quia similique libero
+          dolor iusto nobis, minima, sit id velit eveniet sapiente expedita quam blanditiis voluptate laborum? Sed
+          asperiores corporis aperiam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, laborum
+          accusantium. Laudantium maiores aliquam beatae a non eaque et magni, nemo corrupti atque nobis quibusdam
+          repellendus. Dicta sed cum aut. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi temporibus
+          eaque nisi, commodi cum iusto. Enim asperiores, saepe alias eligendi possimus quisquam dolores nesciunt
+          dolorum corporis nihil perspiciatis nostrum assumenda.</p>
+      </div>
+    </div>
+    <div class="column">
+      <img src="/assets/images/Johnnyyes.jpeg" alt="placeholder image" class="circle" />
+      <div class="column-text">
+        <h2>Johnny Depp</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores temporibus recusandae iusto harum!
+          Voluptates amet iure consequatur, natus, quos facere nobis dicta placeat impedit repudiandae illum
+          perspiciatis! Ipsum, quam numquam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
+          deleniti tempore atque ab in provident explicabo at natus reiciendis delectus dolor, optio doloremque ad hic
+          sit sapiente molestias qui dolorum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque
+          possimus impedit maiores incidunt consectetur officiis sint amet repudiandae corporis sapiente, nihil labore
+          eos iure sit voluptatum eligendi tenetur in! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Voluptatem, totam. Alias commodi mollitia quae cumque. Nobis omnis aspernatur consequuntur placeat ut
+          blanditiis recusandae asperiores a illo inventore cum, iure non. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Molestias unde corrupti quisquam dolorem labore, atque ex ad officia, illo culpa rerum nam
+          sit animi laudantium fugit distinctio inventore? Deserunt, esse.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    const slider = document.querySelector(".slider");
+    const images = slider.querySelectorAll("img");
+    let currentImageIndex = 0;
+    let isMoving = false;
+
+    function autoScroll() {
+      if (!isMoving) {
+        isMoving = true;
+
+        // Calculate index of previous and next images
+        const previousImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        const nextImageIndex = (currentImageIndex + 1) % images.length;
+
+        // Remove current and previous classes from all images
+        images.forEach((image) => {
+          image.classList.remove("current", "previous", "next");
+        });
+
+        // Add current, previous and next classes to the appropriate images
+        const previousImage = images[previousImageIndex];
+        previousImage.classList.add("previous");
+        const currentImage = images[currentImageIndex];
+        currentImage.classList.add("current");
+        const nextImage = images[nextImageIndex];
+        nextImage.classList.add("next");
+
+        // Reset isMoving after the transition time
+        setTimeout(() => {
+          isMoving = false;
+        }, 500);
+      }
+    }
+
+    setInterval(() => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      autoScroll();
+    }, 4000);
+
+    autoScroll();
+  </script>
+  <footer>
+    <p>&copy; 2023 PacPac Snacks. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
